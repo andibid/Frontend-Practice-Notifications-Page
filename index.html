@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Notifications page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      body {
+        margin: 0;
+      }
+      .container {
+        font-family: Arial, sans-serif;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(246, 250, 252);
+      }
+      .card {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        background-color: white;
+        padding: 16px;
+      }
+      .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .notif {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .number {
+        background-color: rgb(58, 103, 143);
+        color: white;
+        padding: 4px 12px 4px 12px;
+        border-radius: 8px;
+      }
+      .mark-all {
+        color: rgb(73, 106, 136);
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .notif-item {
+        display: flex;
+        padding: 16px;
+        gap: 8px;
+      }
+
+      .notif-item:not(.unread) .dot {
+        display: none;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 8px;
+      }
+      .text * {
+        display: inline;
+      }
+      .name {
+        font-weight: 700;
+      }
+      span {
+        color: rgb(73, 106, 136);
+      }
+      .post {
+        font-weight: 700;
+        color: rgb(73, 106, 136);
+      }
+      .time {
+        color: rgb(155, 163, 170);
+      }
+      .notif-item.unread {
+        background-color: rgb(246, 250, 252);
+        border-radius: 10px;
+      }
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(226, 78, 62);
+        border-radius: 9999px;
+      }
+
+      .group-name {
+        font-weight: 700;
+        color: rgb(4, 79, 149);
+      }
+      .msg {
+        padding: 16px;
+        color: rgb(73, 106, 136);
+        border: 1px solid rgb(202, 207, 224);
+        border-radius: 10px;
+      }
+
+      .pic {
+        border-radius: 8px;
+        padding: 4px;
+      }
+
+      .mark-all:hover,
+      .name:hover,
+      .post:hover,
+      .group-name:hover {
+        color: rgb(4, 79, 149);
+        cursor: pointer;
+      }
+
+      .msg:hover,
+      .pic:hover {
+        background-color: rgb(226, 237, 246);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="top-bar">
+          <div class="notif">
+            <h1>Notifications</h1>
+            <div class="number">3</div>
+          </div>
+          <div class="mark-all">Mark all as read</div>
+        </div>
+        <div class="content">
+          <div class="notif-item unread">
+            <img src="assets\images\avatar-mark-webber.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Mark Webber</div>
+                <span>reacted to your recent post</span>
+                <div class="post">My first tournament today!</div>
+                <div class="dot"></div>
+              </div>
+              <div class="time">1m ago</div>
+            </div>
+          </div>
+
+          <div class="notif-item unread">
+            <img src="assets\images\avatar-angela-gray.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Angela Gray</div>
+                <span>followed you</span>
+                <div class="dot"></div>
+              </div>
+              <div class="time">5m ago</div>
+            </div>
+          </div>
+
+          <div class="notif-item unread">
+            <img src="assets\images\avatar-jacob-thompson.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Jacob Thompson</div>
+                <span>has joined your group</span>
+                <div class="group-name">Chess Club</div>
+                <div class="dot"></div>
+              </div>
+              <div class="time">1 day ago</div>
+            </div>
+          </div>
+
+          <div class="notif-item">
+            <img src="assets\images\avatar-rizky-hasanuddin.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Rizky Hasanuddin</div>
+                <span>sent you a private message</span>
+              </div>
+              <div class="time">5 days ago</div>
+              <div class="msg">
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </div>
+            </div>
+          </div>
+
+          <div class="notif-item">
+            <img src="assets\images\avatar-kimberly-smith.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Kimberly Smith</div>
+                <span>commented on your picture</span>
+              </div>
+              <div class="time">1 week ago</div>
+            </div>
+            <img class="pic" src="assets\images\image-chess.webp" alt="" />
+          </div>
+
+          <div class="notif-item">
+            <img src="assets\images\avatar-nathan-peterson.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Nathan Peterson</div>
+                <span>reacted to your recent post</span>
+                <div class="post">
+                  5 end-game strategies to increase your win rate
+                </div>
+              </div>
+              <div class="time">2 weeks ago</div>
+            </div>
+          </div>
+
+          <div class="notif-item">
+            <img src="assets\images\avatar-anna-kim.webp" alt="" />
+            <div class="text-container">
+              <div class="text">
+                <div class="name">Anna Kim</div>
+                <span>left the group</span>
+                <div class="group-name">Chess Club</div>
+              </div>
+              <div class="time">2 weeks ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+  <script src="index.js"></script>
+</html>
